@@ -7,5 +7,8 @@
     "mocha": "^2.2.1",
     "moment": "^2.9.0",
     "ws": "^0.7.1"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha"
   }
 }

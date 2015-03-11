@@ -18,7 +18,7 @@ clientSocket.on('open', function () {
     };
     stdin.addListener("data", function(input) {
         var userInput = input.toString().substring(0, input.length-1)
-        var object = format.messageToServer(userInput);
-        clientSocket.send(JSON.stringify(format.messageToServer(userInput)))
+        var userInputJsonObject = format.messageToServer(userInput);
+        clientSocket.send(JSON.stringify(userInputJsonObject))
     });
 });
