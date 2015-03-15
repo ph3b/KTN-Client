@@ -42,7 +42,7 @@ var formatTime = function (timestamp) {
 
 var formatMessageToServer = function(string){
         var request = string.split(" ")[0];
-        var content = ""
+        var content = "";
         for(var k = 1; k < string.split(" ").length; k++){
             if(k === string.split(" ").length-1){
                 content += string.split(" ")[k]
@@ -55,7 +55,6 @@ var formatMessageToServer = function(string){
             "request": request,
             "content" : content
         })
-
 };
 
 module.exports = {

@@ -25,13 +25,29 @@ describe('Unit tests for format functions', function(){
         };
         expect(format.messageFromServer(welcomeMessage)).to.be.eql("13:08:26 Server(info): Welcome to chat server");
         done();
-    })
-    it('should convert input to a valid json object with request and content field',function(done){
-        var userInputString = "msg hello everyone"
+    });
+    it('should convert msg input to approriate JSON Object',function(done){
+        var userInputString = "msg hello everyone";
         expect(format.messageToServer(userInputString).content).to.be.eql("hello everyone");
         expect(format.messageToServer(userInputString).request).to.be.eql("msg");
         done();
-    })
-
-
+    });
+    it('should convert login input to approriate JSON Object',function(done){
+        var userInputString = "login mathias";
+        expect(format.messageToServer(userInputString).content).to.be.eql("mathias");
+        expect(format.messageToServer(userInputString).request).to.be.eql("login");
+        done();
+    });
+    it('should convert help input to approriate JSON Object',function(done){
+        var userInputString = "help";
+        expect(format.messageToServer(userInputString).content).to.be.eql("");
+        expect(format.messageToServer(userInputString).request).to.be.eql("help");
+        done();
+    });
+    it('should convert logout input to approriate JSON Object',function(done){
+        var userInputString = "logout";
+        expect(format.messageToServer(userInputString).content).to.be.eql("");
+        expect(format.messageToServer(userInputString).request).to.be.eql("logout");
+        done();
+    });
 });
