@@ -2,7 +2,6 @@
  * Created by mattiden on 11.03.15.
  */
 var expect = require('expect.js');
-var moment = require('moment');
 var format = require('./../handlers/formatHandlers.js');
 
 describe('Unit tests for format functions', function(){
